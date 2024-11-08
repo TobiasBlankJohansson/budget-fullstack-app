@@ -6,13 +6,19 @@ const Items: budgetItem[] = [
     id: "1",
     name: "Stuff",
     sum: 50,
-    type: "string",
+    type: "needs",
   },
   {
     id: "1",
     name: "Stuff",
     sum: 50,
-    type: "string",
+    type: "wants",
+  },
+  {
+    id: "1",
+    name: "Stuff",
+    sum: 50,
+    type: "saves",
   },
 ];
 
