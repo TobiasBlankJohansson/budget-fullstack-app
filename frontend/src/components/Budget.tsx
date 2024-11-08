@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BudgetCard } from "./BudgetCard";
 import { budgetItem } from "./item";
+import { BudgetSetRule } from "./BudgetSetRule";
 
 type budgetCard = {
   items: budgetItem[];
@@ -43,7 +44,7 @@ export function Budget({ items, income }: budgetCard) {
     });
   }, items);
 
-  const cangeRules = (needs: number, wants: number, saves: number) => {
+  const changeRules = (needs: number, wants: number, saves: number) => {
     setNeeds((perv) => ({ items: perv.items, income: needs }));
     setWants((perv) => ({ items: perv.items, income: wants }));
     setSaves((perv) => ({ items: perv.items, income: saves }));
@@ -51,9 +52,10 @@ export function Budget({ items, income }: budgetCard) {
 
   return (
     <div>
-      <BudgetCard type={"Needs"} items={needs.items} budget={100} />
-      <BudgetCard type={"Wants"} items={wants.items} budget={100} />
-      <BudgetCard type={"Saves"} items={saves.items} budget={100} />
+      <BudgetCard type={"Needs"} items={needs.items} budget={needs.income} />
+      <BudgetCard type={"Wants"} items={wants.items} budget={needs.income} />
+      <BudgetCard type={"Saves"} items={saves.items} budget={needs.income} />
+      <BudgetSetRule budget={income} onSaveClick={changeRules} />
     </div>
   );
 }
