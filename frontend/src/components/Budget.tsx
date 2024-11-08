@@ -34,11 +34,15 @@ export function Budget({ items, income }: inputBudget) {
     });
   }, items);
 
+  const cangeRules = (needs: number, whants: number, saves: number) => {
+    
+  }
+
   return (
     <div>
-      <BudgetCard type={"needs"} items={needs} budget={100} />
-      <BudgetCard type={"wants"} items={wants} budget={100} />
-      <BudgetCard type={"saves"} items={saves} budget={100} />
+      <BudgetCard type={"Needs"} items={needs} budget={100} />
+      <BudgetCard type={"Wants"} items={wants} budget={100} />
+      <BudgetCard type={"Saves"} items={saves} budget={100} />
     </div>
   );
 }
