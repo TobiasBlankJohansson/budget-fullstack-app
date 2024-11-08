@@ -43,13 +43,17 @@ export function Budget({ items, income }: budgetCard) {
     });
   }, items);
 
-  const cangeRules = (needs: number, whants: number, saves: number) => {};
+  const cangeRules = (needs: number, wants: number, saves: number) => {
+    setNeeds((perv) => ({ items: perv.items, income: needs }));
+    setWants((perv) => ({ items: perv.items, income: wants }));
+    setSaves((perv) => ({ items: perv.items, income: saves }));
+  };
 
   return (
     <div>
-      <BudgetCard type={"Needs"} items={needs} budget={100} />
-      <BudgetCard type={"Wants"} items={wants} budget={100} />
-      <BudgetCard type={"Saves"} items={saves} budget={100} />
+      <BudgetCard type={"Needs"} items={needs.items} budget={100} />
+      <BudgetCard type={"Wants"} items={wants.items} budget={100} />
+      <BudgetCard type={"Saves"} items={saves.items} budget={100} />
     </div>
   );
 }
