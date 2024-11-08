@@ -1,124 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  #root {
-    width: 90%;
-    max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  /* Main and section styling */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Main container styling */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Section headers */
+header h3 {
+  font-size: 1.6em;
+  color: #444;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Article styling */
+article {
+  margin-bottom: 20px;
+}
+
+article p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+table td,
+table th {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 12px 20px;
+  font-size: 1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  section {
     padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
   }
-  
-  /* Header and heading styling */
-  header h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #4a90e2;
-  }
-  
-  /* Article content styling */
-  article {
-    margin-top: 10px;
-  }
-  
-  article p {
-    margin: 5px 0;
+
+  table td,
+  table th {
     font-size: 0.9em;
-    color: #666;
   }
-  
-  /* Table styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f0f4f8;
-    color: #333;
-  }
-  
-  /* Form styling */
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  label {
-    font-size: 0.9em;
-    color: #333;
-  }
-  
-  input[type="number"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 0.9em;
-    width: 100%;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+
+  form label {
     font-size: 1em;
-    cursor: pointer;
   }
-  
-  button:hover {
-    background-color: #357ab8;
+
+  form input,
+  form button {
+    font-size: 0.95em;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    #root {
-      width: 100%;
-      padding: 15px;
-    }
-  
-    table, th, td {
-      font-size: 0.85em;
-    }
-  
-    button {
-      font-size: 0.9em;
-    }
-  }
+}
