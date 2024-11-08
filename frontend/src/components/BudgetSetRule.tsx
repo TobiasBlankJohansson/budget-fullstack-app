@@ -10,7 +10,7 @@ type formData = {
   whants: number;
 };
 
-export function BudgetSetRule({ budget, onSaveClick }: inportBudgetSetRule) {
+export function BudgetSetRule({onSaveClick }: inportBudgetSetRule) {
   const [formData, setFormData] = useState<formData>({ needs: 50, whants: 30 });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,11 +29,7 @@ export function BudgetSetRule({ budget, onSaveClick }: inportBudgetSetRule) {
       return;
     }
 
-    onSaveClick(
-      (formData.needs * budget) / 100,
-      (formData.whants * budget) / 100,
-      (saves * budget) / 100
-    );
+    onSaveClick(formData.needs, formData.whants, saves);
   };
 
   return (
