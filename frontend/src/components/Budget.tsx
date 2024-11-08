@@ -2,41 +2,48 @@ import { useEffect, useState } from "react";
 import { BudgetCard } from "./BudgetCard";
 import { budgetItem } from "./item";
 
-type inputBudget = {
+type budgetCard = {
   items: budgetItem[];
   income: number;
 };
 
-export function Budget({ items, income }: inputBudget) {
-  const [needs, setNeeds] = useState<budgetItem[]>([]);
-  const [wants, setWants] = useState<budgetItem[]>([]);
-  const [saves, setSaves] = useState<budgetItem[]>([]);
+export function Budget({ items, income }: budgetCard) {
+  const [needs, setNeeds] = useState<budgetCard>({ items: [], income: 0 });
+  const [wants, setWants] = useState<budgetCard>({ items: [], income: 0 });
+  const [saves, setSaves] = useState<budgetCard>({ items: [], income: 0 });
 
   useEffect(() => {
-    setNeeds(() => []);
-    setWants(() => []);
-    setSaves(() => []);
+    setNeeds((perv) => ({ items: [], income: perv.income }));
+    setWants((perv) => ({ items: [], income: perv.income }));
+    setSaves((perv) => ({ items: [], income: perv.income }));
 
     items.forEach((item) => {
       const itemType: string = item.type;
       if (itemType == "needs") {
-        setNeeds((prev) => [...prev, item]);
+        setNeeds((perv) => ({
+          items: [...perv.items, item],
+          income: perv.income,
+        }));
         return;
       }
       if (itemType == "wants") {
-        setWants((prev) => [...prev, item]);
+        setWants((perv) => ({
+          items: [...perv.items, item],
+          income: perv.income,
+        }));
         return;
       }
       if (itemType == "saves") {
-        setSaves((prev) => [...prev, item]);
+        setSaves((perv) => ({
+          items: [...perv.items, item],
+          income: perv.income,
+        }));
         return;
       }
     });
   }, items);
 
-  const cangeRules = (needs: number, whants: number, saves: number) => {
-    
-  }
+  const cangeRules = (needs: number, whants: number, saves: number) => {};
 
   return (
     <div>
