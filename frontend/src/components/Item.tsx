@@ -1,7 +1,7 @@
 export type bugetItem = {
   id: string;
   name: string;
-  sum: string;
+  sum: number;
   type: string;
 };
 
