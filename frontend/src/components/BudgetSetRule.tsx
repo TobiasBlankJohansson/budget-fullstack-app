@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 type inportBudgetSetRule = {
-  budget: number;
   onSaveClick: (needs: number, whants: number, saves: number) => void;
 };
 
