@@ -7,7 +7,7 @@ type inputBudget = {
   income: number;
 };
 
-export function Buget({ items, income }: inputBudget) {
+export function Budget({ items, income }: inputBudget) {
   const [needs, setNeeds] = useState<budgetItem[]>([]);
   const [wants, setWants] = useState<budgetItem[]>([]);
   const [saves, setSaves] = useState<budgetItem[]>([]);
