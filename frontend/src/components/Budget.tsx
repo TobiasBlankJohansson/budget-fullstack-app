@@ -53,8 +53,8 @@ export function Budget({ items, income }: budgetCard) {
   return (
     <div>
       <BudgetCard type={"Needs"} items={needs.items} budget={needs.income} />
-      <BudgetCard type={"Wants"} items={wants.items} budget={needs.income} />
-      <BudgetCard type={"Saves"} items={saves.items} budget={needs.income} />
+      <BudgetCard type={"Wants"} items={wants.items} budget={wants.income} />
+      <BudgetCard type={"Saves"} items={saves.items} budget={saves.income} />
       <BudgetSetRule budget={income} onSaveClick={changeRules} />
     </div>
   );
