@@ -36,9 +36,9 @@ export function Buget({ items, income }: inputBudget) {
 
   return (
     <div>
-      <BudgetCard type={"needs"} items={needs} budget={} />
-      <BudgetCard type={"wants"} items={wants} budget={} />
-      <BudgetCard type={"saves"} items={saves} budget={} />
+      <BudgetCard type={"needs"} items={needs} budget={100} />
+      <BudgetCard type={"wants"} items={wants} budget={100} />
+      <BudgetCard type={"saves"} items={saves} budget={100} />
     </div>
   );
 }
