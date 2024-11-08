@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { bugetItem, Item } from "./item";
+import { budgetItem, Item } from "./item";
 
-type inputBugetCard = {
+type inputBudgetCard = {
   type: string;
-  items: bugetItem[];
-  bugent: number;
+  items: budgetItem[];
+  budget: number;
 };
 
-export function BugetCard({ type, items, bugent }: inputBugetCard) {
+export function BudgetCard({ type, items, budget }: inputBudgetCard) {
   const [canSpend, setCanSpend] = useState<number>(0);
   const [totalSpend, setTotalSpend] = useState<number>(0);
 
@@ -15,7 +15,7 @@ export function BugetCard({ type, items, bugent }: inputBugetCard) {
     let spent: number = 0;
     items.forEach((item) => (spent += item.sum));
 
-    setCanSpend(() => bugent - spent);
+    setCanSpend(() => budget - spent);
     setTotalSpend(() => spent);
   }, items);
 
