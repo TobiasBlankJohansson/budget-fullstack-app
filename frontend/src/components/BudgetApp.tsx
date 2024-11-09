@@ -41,6 +41,7 @@ export function BudgetApp() {
         />
         <Income
           items={incomeItem}
+          income={income}
           setItems={setIncomeItem}
           setIncome={setIncome}
         />
