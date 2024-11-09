@@ -21,7 +21,7 @@ export function AddItemForm({ setBudgetItem, type }: inputAddItemForm) {
       type: type,
     };
     //todo:add fetch to place item in data base
-    setBudgetItem((prev) => [...prev, {}]);
+    setBudgetItem((prev) => [...prev, mockItem]);
   };
 
   return (
