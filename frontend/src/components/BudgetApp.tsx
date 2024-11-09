@@ -33,6 +33,7 @@ export function BudgetApp() {
   return (
     <>
       <main>
+        <h1>myBudget</h1>
         <DisplayIncome income={income} />
         <Budget
           income={income}
