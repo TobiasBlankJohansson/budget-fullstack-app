@@ -1,4 +1,4 @@
-import { budgetItem } from "../item";
+import { budgetItem } from "../Item";
 
 type inputAddItemForm = {
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;

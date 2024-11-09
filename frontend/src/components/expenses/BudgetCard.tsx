@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { budgetItem, Item } from "../item";
+import { budgetItem, Item } from "../Item";
+import { AddItemForm } from "./AddItemForm";
 
 type inputBudgetCard = {
   type: string;
@@ -39,6 +40,7 @@ export function BudgetCard({
           </tr>
           {items.map((item) => Item(item))}
         </table>
+        <AddItemForm setBudgetItem={setBudgetItem} type={type} />
         <p>Total spent: {totalSpend}</p>
       </article>
     </section>

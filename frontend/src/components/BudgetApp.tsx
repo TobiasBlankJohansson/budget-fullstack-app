@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Budget } from "./expenses";
-import { budgetItem } from "./item";
+import { budgetItem } from "./Item";
 
 const Items: budgetItem[] = [
   {
