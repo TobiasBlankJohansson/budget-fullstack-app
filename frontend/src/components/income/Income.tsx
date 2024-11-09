@@ -6,4 +6,6 @@ type inputIncome = {
   setIncome: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export function Income({ items, setItems, setIncome }: inputIncome) {}
+export function Income({ items, setItems, setIncome }: inputIncome) {
+  return <></>;
+}
