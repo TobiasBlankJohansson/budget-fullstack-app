@@ -2,18 +2,32 @@ import { useState } from "react";
 import { budgetItem } from "../Item";
 
 type inputAddIncome = {
-  items: budgetItem[];
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
 };
 
-export function AddIncome({ items, setItems }: inputAddIncome) {
+export function AddIncome({setItems }: inputAddIncome) {
   const [item, setItem] = useState<string>("");
   const [amount, setAmount] = useState<number | string>("");
+
+  const handelSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const mockItem: budgetItem = {
+      id: "10",
+      name: item,
+      sum: Number(amount),
+      type: "Income",
+    };
+    //todo:add fetch to place item in data base
+    setItem("");
+    setAmount("");
+    event.currentTarget.reset();
+    setItems((prev) => [...prev, mockItem]);
+  };
 
   return (
     <section>
       <h2>Add income</h2>
-      <form>
+      <form onSubmit={handelSubmit}>
         <label>Item</label>
         <input
           type="text"
@@ -29,7 +43,7 @@ export function AddIncome({ items, setItems }: inputAddIncome) {
           min={1}
           required
         />
-        <button>Add</button>
+        <button type="submit">Add</button>
       </form>
     </section>
   );
