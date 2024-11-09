@@ -3,9 +3,15 @@ import { BudgetCard } from "./BudgetCard";
 import { budgetItem } from "./item";
 import { BudgetSetRule } from "./BudgetSetRule";
 
-type budgetCard = {
+type inputBudget = {
   items: budgetItem[];
   income: number;
+};
+
+type cardItems = {
+  needs: budgetItem[];
+  wants: budgetItem[];
+  saves: budgetItem[];
 };
 
 type budgetRule = {
@@ -14,14 +20,16 @@ type budgetRule = {
   saves: number;
 };
 
-export function Budget({ items, income }: budgetCard) {
-  const [needs, setNeeds] = useState<budgetCard>({ items: [], income: 0 });
-  const [wants, setWants] = useState<budgetCard>({ items: [], income: 0 });
-  const [saves, setSaves] = useState<budgetCard>({ items: [], income: 0 });
+export function Budget({ items, income }: inputBudget) {
+  const [cardItems, setcardItems] = useState<cardItems>({
+    needs: [],
+    wants: [],
+    saves: [],
+  });
   const [budgetRule, setBudgetRule] = useState<budgetRule>({
-    needs: 50,
-    wants: 30,
-    saves: 20,
+    needs: 0.5,
+    wants: 0.3,
+    saves: 0.2,
   });
 
   useEffect(() => {
@@ -45,23 +53,14 @@ export function Budget({ items, income }: budgetCard) {
       }
     });
 
-    setNeeds((perv) => ({ items: needsArr, income: perv.income }));
-    setWants((perv) => ({ items: wantsArr, income: perv.income }));
-    setSaves((perv) => ({ items: savesArr, income: perv.income }));
-  }, items);
-
-  const changeRules = (needs: number, wants: number, saves: number) => {
-    setNeeds((perv) => ({ items: perv.items, income: needs }));
-    setWants((perv) => ({ items: perv.items, income: wants }));
-    setSaves((perv) => ({ items: perv.items, income: saves }));
-  };
+    setcardItems(() => ({ needs: needsArr, wants: wantsArr, saves: savesArr }));
+  }, [items]);
 
   return (
     <div>
-      <BudgetCard type={"Needs"} items={needs.items} budget={needs.income} />
-      <BudgetCard type={"Wants"} items={wants.items} budget={wants.income} />
-      <BudgetCard type={"Saves"} items={saves.items} budget={saves.income} />
-      <BudgetSetRule onSaveClick={changeRules} />
+      <BudgetCard type={"Needs"} items={cardItems.needs} budget={budgetRule.needs*income} />
+      <BudgetCard type={"Wants"} items={cardItems.wants} budget={budgetRule.wants*income} />
+      <BudgetCard type={"Saves"} items={cardItems.saves} budget={budgetRule.saves*income} />
     </div>
   );
 }
