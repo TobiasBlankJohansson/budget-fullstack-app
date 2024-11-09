@@ -1,4 +1,10 @@
-export function AddItemForm() {
+import { budgetItem } from "../item";
+
+type inputAddItemForm = {
+  setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
+};
+
+export function AddItemForm({ setBudgetItem }: inputAddItemForm) {
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const item: HTMLInputElement = document.getElementById(
