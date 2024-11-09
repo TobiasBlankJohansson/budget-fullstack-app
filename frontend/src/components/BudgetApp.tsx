@@ -39,6 +39,11 @@ export function BudgetApp() {
           items={budgetItem}
           setBudgetItem={setBudgetItem}
         />
+        <Income
+          items={incomeItem}
+          setItems={setIncomeItem}
+          setIncome={setIncome}
+        />
       </main>
     </>
   );
