@@ -20,7 +20,11 @@ export function Income({ items, income, setItems, setIncome }: inputIncome) {
 
   return (
     <section>
-      <DisplayIncomeList items={items} setItems={setItems} totalIncome={100} />
+      <DisplayIncomeList
+        items={items}
+        setItems={setItems}
+        totalIncome={income}
+      />
     </section>
   );
 }
