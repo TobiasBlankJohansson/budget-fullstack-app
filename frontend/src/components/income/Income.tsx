@@ -4,11 +4,12 @@ import { DisplayIncomeList } from "./DisplayIncomeList";
 
 type inputIncome = {
   items: budgetItem[];
+  income: number;
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
   setIncome: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export function Income({ items, setItems, setIncome }: inputIncome) {
+export function Income({ items, income, setItems, setIncome }: inputIncome) {
   useEffect(() => {
     let count = 0;
     items.forEach((item) => {
