@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Budget } from "./expenses";
 import { budgetItem } from "./Item";
-import { DisplayIncome } from "./DisplayIncome";
+import { DisplayIncome } from "./income/DisplayIncome";
 import { Income } from "./income/Income";
 
 const Items: budgetItem[] = [
