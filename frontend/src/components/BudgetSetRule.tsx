@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cardItems } from "./Budget";
 
-type inportBudgetSetRule = {
+type inputBudgetSetRule = {
   setCardItems: React.Dispatch<React.SetStateAction<cardItems>>;
 };
 
@@ -10,19 +10,16 @@ type formData = {
   whants: number;
 };
 
-export function BudgetSetRule({setCardItems }: inportBudgetSetRule) {
+export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
+
   
   return (
     <>
       <form onSubmit={handelSubmit}>
         <label>Needs</label>
-        <input
-          type="number"
-        ></input>
+        <input type="number" id="needs"></input>
         <label>Whants</label>
-        <input
-          type="number"
-        ></input>
+        <input type="number" id="whants"></input>
         <button type="submit">Save</button>
       </form>
     </>
