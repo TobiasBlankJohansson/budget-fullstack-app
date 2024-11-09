@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { cardItems } from "./Budget";
 
 type inportBudgetSetRule = {
-  onSaveClick: (needs: number, whants: number, saves: number) => void;
+  setCardItems: React.Dispatch<React.SetStateAction<cardItems>>;
 };
 
 type formData = {
@@ -9,7 +10,7 @@ type formData = {
   whants: number;
 };
 
-export function BudgetSetRule({onSaveClick }: inportBudgetSetRule) {
+export function BudgetSetRule({setCardItems }: inportBudgetSetRule) {
   
   return (
     <>

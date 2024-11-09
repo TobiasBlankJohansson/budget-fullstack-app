@@ -8,7 +8,7 @@ type inputBudget = {
   income: number;
 };
 
-type cardItems = {
+export type cardItems = {
   needs: budgetItem[];
   wants: budgetItem[];
   saves: budgetItem[];
@@ -58,9 +58,21 @@ export function Budget({ items, income }: inputBudget) {
 
   return (
     <div>
-      <BudgetCard type={"Needs"} items={cardItems.needs} budget={budgetRule.needs*income} />
-      <BudgetCard type={"Wants"} items={cardItems.wants} budget={budgetRule.wants*income} />
-      <BudgetCard type={"Saves"} items={cardItems.saves} budget={budgetRule.saves*income} />
+      <BudgetCard
+        type={"Needs"}
+        items={cardItems.needs}
+        budget={budgetRule.needs * income}
+      />
+      <BudgetCard
+        type={"Wants"}
+        items={cardItems.wants}
+        budget={budgetRule.wants * income}
+      />
+      <BudgetCard
+        type={"Saves"}
+        items={cardItems.saves}
+        budget={budgetRule.saves * income}
+      />
     </div>
   );
 }
