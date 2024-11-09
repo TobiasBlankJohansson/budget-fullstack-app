@@ -17,7 +17,7 @@ export function BudgetCard({ type, items, budget }: inputBudgetCard) {
 
     setCanSpend(() => budget - spent);
     setTotalSpend(() => spent);
-  }, [items]);
+  }, [items, budget]);
 
   return (
     <section>

@@ -31,7 +31,6 @@ export function Budget({ items, income }: inputBudget) {
     wants: 0.3,
     saves: 0.2,
   });
-  console.log(budgetRule);
 
   useEffect(() => {
     let needsArr: budgetItem[] = [];
