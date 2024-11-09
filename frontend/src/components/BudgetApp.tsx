@@ -1,4 +1,4 @@
-import { Budget } from "./Budget";
+import { Budget } from "./expenses";
 import { budgetItem } from "./item";
 
 const Items: budgetItem[] = [
@@ -9,13 +9,13 @@ const Items: budgetItem[] = [
     type: "needs",
   },
   {
-    id: "1",
+    id: "2",
     name: "Stuff",
     sum: 50,
     type: "wants",
   },
   {
-    id: "1",
+    id: "3",
     name: "Stuff",
     sum: 50,
     type: "saves",

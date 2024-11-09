@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BudgetCard } from "./BudgetCard";
-import { budgetItem } from "./item";
+import { budgetItem } from "../Item";
 import { BudgetSetRule } from "./BudgetSetRule";
 
 type inputBudget = {

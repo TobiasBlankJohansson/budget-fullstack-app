@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { budgetItem, Item } from "./item";
+import { budgetItem, Item } from "../item";
 
 type inputBudgetCard = {
   type: string;
