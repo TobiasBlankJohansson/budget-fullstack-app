@@ -8,13 +8,13 @@ type inputBudget = {
   income: number;
 };
 
-export type cardItems = {
+type cardItems = {
   needs: budgetItem[];
   wants: budgetItem[];
   saves: budgetItem[];
 };
 
-type budgetRule = {
+export type budgetRule = {
   needs: number;
   wants: number;
   saves: number;
@@ -31,6 +31,7 @@ export function Budget({ items, income }: inputBudget) {
     wants: 0.3,
     saves: 0.2,
   });
+  console.log(budgetRule);
 
   useEffect(() => {
     let needsArr: budgetItem[] = [];
@@ -73,6 +74,7 @@ export function Budget({ items, income }: inputBudget) {
         items={cardItems.saves}
         budget={budgetRule.saves * income}
       />
+      <BudgetSetRule setCardItems={setBudgetRule} />
     </div>
   );
 }
