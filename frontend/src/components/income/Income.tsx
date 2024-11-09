@@ -9,7 +9,13 @@ type inputIncome = {
 };
 
 export function Income({ items, setItems, setIncome }: inputIncome) {
-
+  useEffect(() => {
+    let count = 0;
+    items.forEach((item) => {
+      count += item.sum;
+    });
+    setIncome(count);
+  }, [items]);
 
   return (
     <section>
