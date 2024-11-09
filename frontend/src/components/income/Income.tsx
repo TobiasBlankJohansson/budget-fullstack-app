@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { budgetItem } from "../Item";
 import { DisplayIncomeList } from "./DisplayIncomeList";
+import { AddItemForm } from "../expenses/AddItemForm";
+import { AddIncome } from "./AddIncome";
 
 type inputIncome = {
   items: budgetItem[];
@@ -20,6 +22,7 @@ export function Income({ items, income, setItems, setIncome }: inputIncome) {
 
   return (
     <section>
+      <AddIncome setItems={setItems} />
       <DisplayIncomeList
         items={items}
         setItems={setItems}
