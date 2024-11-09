@@ -5,7 +5,7 @@ type inputAddIncome = {
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
 };
 
-export function AddIncome({ setItems }: inputAddIncome) {
+export function AddIncomeForm({ setItems }: inputAddIncome) {
   const [item, setItem] = useState<string>("");
   const [amount, setAmount] = useState<number | string>("");
 
