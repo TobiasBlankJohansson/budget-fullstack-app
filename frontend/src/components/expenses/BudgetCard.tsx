@@ -29,10 +29,17 @@ export function BudgetCard({ type, items, budget }: inputBudgetCard) {
         <table>
           <tr>
             <td>Item</td>
-            <td></td>
+            <td>Amount</td>
           </tr>
           {items.map((item) => Item(item))}
         </table>
+        <form onSubmit={() => {}}>
+          <label>Item</label>
+          <input type="text" id="add-item__item" required />
+          <label>Amount</label>
+          <input type="number" id="add-item__add" required />
+          <button type="submit">Add</button>
+        </form>
         <p>Total spent: {totalSpend}</p>
       </article>
     </section>
