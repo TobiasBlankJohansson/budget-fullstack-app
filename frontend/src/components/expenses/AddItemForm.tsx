@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { budgetItem } from "../Item";
 
 type inputAddItemForm = {
@@ -6,30 +7,41 @@ type inputAddItemForm = {
 };
 
 export function AddItemForm({ setBudgetItem, type }: inputAddItemForm) {
+  const [item, setItem] = useState<string>("");
+  const [amount, setAmount] = useState<number | string>("");
+
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const item: HTMLInputElement = document.getElementById(
-      "add-item__item"
-    ) as HTMLInputElement;
-    const amount: HTMLInputElement = document.getElementById(
-      "add-item__add"
-    ) as HTMLInputElement;
     const mockItem: budgetItem = {
       id: "10",
-      name: item.value,
-      sum: Number(amount.value),
+      name: item,
+      sum: Number(amount),
       type: type,
     };
     //todo:add fetch to place item in data base
+    setItem("");
+    setAmount("");
+    event.currentTarget.reset();
     setBudgetItem((prev) => [...prev, mockItem]);
   };
 
   return (
     <form onSubmit={handelSubmit}>
       <label>Item</label>
-      <input type="text" id="add-item__item" required />
+      <input
+        type="text"
+        value={item}
+        onChange={(e) => setItem(e.target.value)}
+        required
+      />
       <label>Amount</label>
-      <input type="number" id="add-item__add" min={1} required />
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => setAmount(Number(e.target.value))}
+        min={1}
+        required
+      />
       <button type="submit">Add</button>
     </form>
   );

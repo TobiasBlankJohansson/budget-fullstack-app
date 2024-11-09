@@ -40,15 +40,15 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
 
     items.forEach((item) => {
       const itemType: string = item.type;
-      if (itemType == "needs") {
+      if (itemType == "Needs") {
         needsArr.push(item);
         return;
       }
-      if (itemType == "wants") {
+      if (itemType == "Wants") {
         wantsArr.push(item);
         return;
       }
-      if (itemType == "saves") {
+      if (itemType == "Saves") {
         savesArr.push(item);
         return;
       }

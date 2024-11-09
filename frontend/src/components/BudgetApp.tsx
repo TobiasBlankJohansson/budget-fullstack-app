@@ -7,25 +7,25 @@ const Items: budgetItem[] = [
     id: "1",
     name: "Stuff",
     sum: 50,
-    type: "needs",
+    type: "Needs",
   },
   {
     id: "2",
     name: "Stuff",
     sum: 50,
-    type: "wants",
+    type: "Wants",
   },
   {
     id: "3",
     name: "Stuff",
     sum: 50,
-    type: "saves",
+    type: "Saves",
   },
 ];
 
 export function BudgetApp() {
   const [budgetItem, setBudgetItem] = useState<budgetItem[]>(Items);
-
+  console.log(budgetItem);
   return (
     <>
       <main>
