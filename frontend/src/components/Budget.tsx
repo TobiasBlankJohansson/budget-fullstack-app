@@ -25,34 +25,29 @@ export function Budget({ items, income }: budgetCard) {
   });
 
   useEffect(() => {
-    setNeeds((perv) => ({ items: [], income: perv.income }));
-    setWants((perv) => ({ items: [], income: perv.income }));
-    setSaves((perv) => ({ items: [], income: perv.income }));
+    let needsArr: budgetItem[] = [];
+    let wantsArr: budgetItem[] = [];
+    let savesArr: budgetItem[] = [];
 
     items.forEach((item) => {
       const itemType: string = item.type;
       if (itemType == "needs") {
-        setNeeds((perv) => ({
-          items: [...perv.items, item],
-          income: perv.income,
-        }));
+        needsArr.push(item);
         return;
       }
       if (itemType == "wants") {
-        setWants((perv) => ({
-          items: [...perv.items, item],
-          income: perv.income,
-        }));
+        wantsArr.push(item);
         return;
       }
       if (itemType == "saves") {
-        setSaves((perv) => ({
-          items: [...perv.items, item],
-          income: perv.income,
-        }));
+        savesArr.push(item);
         return;
       }
     });
+
+    setNeeds((perv) => ({ items: needsArr, income: perv.income }));
+    setWants((perv) => ({ items: wantsArr, income: perv.income }));
+    setSaves((perv) => ({ items: savesArr, income: perv.income }));
   }, items);
 
   const changeRules = (needs: number, wants: number, saves: number) => {
