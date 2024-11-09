@@ -1,117 +1,146 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
+/* Body Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
   line-height: 1.6;
+  background-color: #f4f4f4;
   padding: 20px;
 }
 
-/* Main container styling */
+/* Main Container */
 main {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Section headers */
-header h3 {
-  font-size: 1.6em;
+/* Header Styles */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.5rem;
   color: #444;
   margin-bottom: 10px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
 }
 
-/* Article styling */
+header {
+  margin-bottom: 10px;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 30px;
+}
+
 article {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-article p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-/* Table styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-
-table td,
-table th {
-  padding: 10px;
-  text-align: left;
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
 
-table th {
-  background-color: #f2f2f2;
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f1f1f1;
+}
+
+/* Form Styles */
+form {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+label {
   font-weight: bold;
 }
 
-/* Form styling */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-form label {
-  font-size: 1.1em;
-  margin-bottom: 5px;
-}
-
-form input {
+input[type="text"],
+input[type="number"] {
   padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
 }
 
-form button {
-  padding: 12px 20px;
-  font-size: 1em;
+button[type="submit"] {
+  padding: 10px 20px;
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-form button:hover {
+button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  main {
-    padding: 15px;
-  }
+input[type="number"] {
+  width: 100%;
+}
 
-  table td,
-  table th {
-    font-size: 0.9em;
-  }
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4caf50;
+}
 
-  form label {
-    font-size: 1em;
-  }
+input[type="number"]:invalid {
+  border-color: red;
+}
 
-  form input,
-  form button {
-    font-size: 0.95em;
-  }
+/* Footer Form Styles */
+form:last-of-type {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form:last-of-type label {
+  margin: 0;
+}
+
+form:last-of-type input {
+  width: 150px;
+}
+
+form:last-of-type button {
+  flex-shrink: 0;
 }

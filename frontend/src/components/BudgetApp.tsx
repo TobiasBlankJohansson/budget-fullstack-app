@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Budget } from "./expenses";
 import { budgetItem } from "./Item";
+import { DisplayIncome } from "./DisplayIncome";
 
 const Items: budgetItem[] = [
   {
@@ -25,11 +26,17 @@ const Items: budgetItem[] = [
 
 export function BudgetApp() {
   const [budgetItem, setBudgetItem] = useState<budgetItem[]>(Items);
-  console.log(budgetItem);
+  const [income, setIncome] = useState<number>(100);
+
   return (
     <>
       <main>
-        <Budget income={100} items={budgetItem} setBudgetItem={setBudgetItem} />
+        <DisplayIncome income={income} />
+        <Budget
+          income={income}
+          items={budgetItem}
+          setBudgetItem={setBudgetItem}
+        />
       </main>
     </>
   );
