@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Budget } from "./expenses";
 import { budgetItem } from "./item";
 
@@ -23,10 +24,12 @@ const Items: budgetItem[] = [
 ];
 
 export function BudgetApp() {
+  const [budgetItem, SetBudgetItem] = useState<budgetItem[]>(Items);
+
   return (
     <>
       <main>
-        <Budget income={100} items={Items} />
+        <Budget income={100} items={budgetItem} />
       </main>
     </>
   );
