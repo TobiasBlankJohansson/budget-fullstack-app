@@ -1,5 +1,5 @@
 export function AddItemForm() {
-  const handelSubmit = (event: React.FormEvent) => {
+  const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const item: HTMLInputElement = document.getElementById(
       "add-item__item"

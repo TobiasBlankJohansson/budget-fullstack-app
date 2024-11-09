@@ -24,12 +24,12 @@ const Items: budgetItem[] = [
 ];
 
 export function BudgetApp() {
-  const [budgetItem, SetBudgetItem] = useState<budgetItem[]>(Items);
+  const [budgetItem, setBudgetItem] = useState<budgetItem[]>(Items);
 
   return (
     <>
       <main>
-        <Budget income={100} items={budgetItem} />
+        <Budget income={100} items={budgetItem} setBudgetItem={setBudgetItem} />
       </main>
     </>
   );

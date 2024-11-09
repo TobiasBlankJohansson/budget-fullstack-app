@@ -5,9 +5,15 @@ type inputBudgetCard = {
   type: string;
   items: budgetItem[];
   budget: number;
+  setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
 };
 
-export function BudgetCard({ type, items, budget }: inputBudgetCard) {
+export function BudgetCard({
+  type,
+  items,
+  budget,
+  setBudgetItem,
+}: inputBudgetCard) {
   const [canSpend, setCanSpend] = useState<number>(0);
   const [totalSpend, setTotalSpend] = useState<number>(0);
 

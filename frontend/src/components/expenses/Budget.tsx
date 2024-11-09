@@ -6,6 +6,7 @@ import { BudgetSetRule } from "./BudgetSetRule";
 type inputBudget = {
   items: budgetItem[];
   income: number;
+  setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
 };
 
 type cardItems = {
@@ -20,7 +21,7 @@ export type budgetRule = {
   saves: number;
 };
 
-export function Budget({ items, income }: inputBudget) {
+export function Budget({ items, income, setBudgetItem }: inputBudget) {
   const [cardItems, setcardItems] = useState<cardItems>({
     needs: [],
     wants: [],
@@ -62,16 +63,19 @@ export function Budget({ items, income }: inputBudget) {
         type={"Needs"}
         items={cardItems.needs}
         budget={budgetRule.needs * income}
+        setBudgetItem={setBudgetItem}
       />
       <BudgetCard
         type={"Wants"}
         items={cardItems.wants}
         budget={budgetRule.wants * income}
+        setBudgetItem={setBudgetItem}
       />
       <BudgetCard
         type={"Saves"}
         items={cardItems.saves}
         budget={budgetRule.saves * income}
+        setBudgetItem={setBudgetItem}
       />
       <BudgetSetRule setCardItems={setBudgetRule} />
     </div>

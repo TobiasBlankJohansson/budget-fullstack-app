@@ -7,8 +7,8 @@ type inputBudgetSetRule = {
 export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
   const handelSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const needs: number = document.getElementById("needs").value/100;
-    const wants: number = document.getElementById("wants").value/100;
+    const needs: number = document.getElementById("needs").value / 100;
+    const wants: number = document.getElementById("wants").value / 100;
 
     if (needs == null || wants == null) {
       return;
@@ -16,11 +16,11 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
     }
 
     const saves: number = 1 - needs - wants;
-    if (saves < 0.00) {
+    if (saves < 0.0) {
       return;
       //todo:give user response
     }
-    
+
     setCardItems(() => ({ needs: needs, wants: wants, saves: saves }));
   };
 
