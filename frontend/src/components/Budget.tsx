@@ -8,10 +8,21 @@ type budgetCard = {
   income: number;
 };
 
+type budgetRule = {
+  needs: number;
+  wants: number;
+  saves: number;
+};
+
 export function Budget({ items, income }: budgetCard) {
   const [needs, setNeeds] = useState<budgetCard>({ items: [], income: 0 });
   const [wants, setWants] = useState<budgetCard>({ items: [], income: 0 });
   const [saves, setSaves] = useState<budgetCard>({ items: [], income: 0 });
+  const [budgetRule, setBudgetRule] = useState<budgetRule>({
+    needs: 50,
+    wants: 30,
+    saves: 20,
+  });
 
   useEffect(() => {
     setNeeds((perv) => ({ items: [], income: perv.income }));
