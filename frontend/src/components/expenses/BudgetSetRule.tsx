@@ -25,7 +25,7 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
   };
 
   return (
-    <>
+    <article>
       <form onSubmit={handelSubmit}>
         <label>Needs</label>
         <input type="number" id="needs" min={0} required></input>
@@ -33,6 +33,6 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
         <input type="number" id="wants" min={0} required></input>
         <button type="submit">Save</button>
       </form>
-    </>
+    </article>
   );
 }

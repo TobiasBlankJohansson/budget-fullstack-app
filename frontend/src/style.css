@@ -1,146 +1,141 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
   font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
   line-height: 1.6;
-  background-color: #f4f4f4;
   padding: 20px;
 }
 
-/* Main Container */
 main {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fff;
   padding: 20px;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styles */
 h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+  color: #2c3e50;
+  font-size: 1.8em;
+  margin-bottom: 15px;
 }
 
 h3 {
-  font-size: 1.5rem;
-  color: #444;
+  color: #34495e;
+  font-size: 1.5em;
   margin-bottom: 10px;
+}
+
+section {
+  margin-bottom: 30px;
 }
 
 header {
   margin-bottom: 10px;
 }
 
-/* Section Styles */
-section {
-  margin-bottom: 30px;
-}
-
 article {
-  background-color: #fafafa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 6px;
 }
 
-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-table,
-th,
-td {
-  border: 1px solid #ddd;
-}
-
-th,
-td {
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background-color: #f1f1f1;
-}
-
-/* Form Styles */
 form {
-  display: grid;
-  gap: 10px;
   margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
 }
 
-label {
+form label {
   font-weight: bold;
 }
 
 input[type="text"],
 input[type="number"] {
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-  font-size: 1rem;
 }
 
 button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  padding: 10px;
+  background-color: #2980b9;
+  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #3498db;
 }
 
-input[type="number"] {
+table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
 }
 
-input[type="number"]:focus,
-input[type="text"]:focus {
-  outline: none;
-  border-color: #4caf50;
+table,
+th,
+td {
+  border: 1px solid #ccc;
 }
 
-input[type="number"]:invalid {
-  border-color: red;
+th,
+td {
+  padding: 8px;
+  text-align: left;
 }
 
-/* Footer Form Styles */
-form:last-of-type {
-  margin-top: 40px;
-  display: flex;
+th {
+  background-color: #34495e;
+  color: white;
+}
+
+td {
+  background-color: #ecf0f1;
+}
+
+p {
+  margin-top: 15px;
+}
+
+section table {
+  margin-top: 20px;
+}
+
+form input[type="number"] {
+  width: auto;
+}
+
+#needs,
+#wants {
+  width: auto;
+}
+
+/* Grid Layout for main container */
+div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  justify-content: space-between;
-  align-items: center;
 }
 
-form:last-of-type label {
-  margin: 0;
+section section {
+  grid-column: span 2;
 }
 
-form:last-of-type input {
-  width: 150px;
-}
-
-form:last-of-type button {
-  flex-shrink: 0;
+@media (max-width: 768px) {
+  div {
+    grid-template-columns: 1fr;
+  }
 }
