@@ -4,6 +4,7 @@ import { budgetItem } from "./Item";
 import { DisplayIncome } from "./income/DisplayIncome";
 import { Income } from "./income/Income";
 import { getIncome } from "../api/income";
+import { getExpense } from "../api/expense";
 
 export function BudgetApp() {
   const [budgetItem, setBudgetItem] = useState<budgetItem[]>([]);
@@ -14,7 +15,7 @@ export function BudgetApp() {
     const getList = async () => {
       const incomeList = await getIncome(2000);
       setIncomeItem(() => incomeList);
-      const expenseList = await getIncome(2000);
+      const expenseList = await getExpense(2000);
       setBudgetItem(() => expenseList);
     };
     getList();
