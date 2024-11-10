@@ -2,10 +2,7 @@ package salt.dev.budget.budget.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import salt.dev.budget.budget.model.Income;
 import salt.dev.budget.budget.service.BudgetService;
 
@@ -26,5 +23,11 @@ public class BudgetController {
     @GetMapping("{id}/income")
     public ResponseEntity<List<Income>> getIncomeList(@PathVariable long id){
         return ResponseEntity.ok(service.getIncomeList(id));
+    }
+
+    @PostMapping("{id}/income")
+    public ResponseEntity<Income> addIncomeList(
+            @PathVariable long id, @RequestBody RequestIncomeDto incomeDto){
+        return null;
     }
 }
