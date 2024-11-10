@@ -19,4 +19,35 @@ public class Income {
 
     @ManyToOne(optional = false)
     @JoinColumn(name="budget_id")
-    private Budget budget;}
+    private Budget budget;
+
+    public Income() {
+    }
+
+    public Income(String name, long sum, String type, Budget budget) {
+        this.name = name;
+        this.sum = sum;
+        this.type = type;
+        this.budget = budget;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getSum() {
+        return sum;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+}
