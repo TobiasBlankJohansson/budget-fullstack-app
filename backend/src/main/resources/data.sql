@@ -1,0 +1,3 @@
+DELETE FROM budget;
+
+INSERT INTO budget(id) VALUES (2000);
