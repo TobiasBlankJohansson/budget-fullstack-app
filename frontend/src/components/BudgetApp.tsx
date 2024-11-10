@@ -14,6 +14,8 @@ export function BudgetApp() {
     const getList = async () => {
       const incomeList = await getIncome(2000);
       setIncomeItem(() => incomeList);
+      const expenseList = await getIncome(2000);
+      setBudgetItem(() => expenseList);
     };
     getList();
   }, [income]);
