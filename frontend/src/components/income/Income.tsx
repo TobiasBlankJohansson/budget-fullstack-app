@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { budgetItem } from "../Item";
 import { DisplayIncomeList } from "./DisplayIncomeList";
 import { AddIncomeForm } from "./AddIncomeForm";
@@ -11,6 +11,7 @@ type inputIncome = {
 };
 
 export function Income({ items, income, setItems, setIncome }: inputIncome) {
+  const [selected, setSelected] = useState<string>();
   useEffect(() => {
     let count = 0;
     items.forEach((item) => {
@@ -26,6 +27,8 @@ export function Income({ items, income, setItems, setIncome }: inputIncome) {
         items={items}
         setItems={setItems}
         totalIncome={income}
+        selected={selected}
+        setSelected={setSelected}
       />
     </section>
   );
