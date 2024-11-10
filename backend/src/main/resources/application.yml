@@ -24,7 +24,7 @@ spring:
       ansi:
         enabled: always
   config:
-    import: file:/application-dev.yml
+    import: file:./src/main/resources/application-dev.yml
 logging:
   level:
     org:
