@@ -22,7 +22,7 @@ public class Budget {
     public Budget() {
     }
 
-    public Budget(long id, List<Expence> expenses, List<Income> incomes) {
+    public Budget(long id, List<Expense> expenses, List<Income> incomes) {
         this.id = id;
         this.expenses = expenses;
         this.incomes = incomes;
@@ -32,7 +32,7 @@ public class Budget {
         return id;
     }
 
-    public List<Expence> getExpenses() {
+    public List<Expense> getExpenses() {
         return expenses;
     }
 
