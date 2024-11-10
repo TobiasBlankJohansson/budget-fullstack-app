@@ -21,7 +21,7 @@ public class BudgetService {
     public List<Income> getIncomeList(long budgetId) throws NoSuchElementException {
         var budget = repo.findById(budgetId)
                 .orElseThrow(NoSuchElementException::new);
-        return budget.getIncomes();
+        return incomeRepo.findAllByBudget(budget);
         //todo:make good Exception
     }
 

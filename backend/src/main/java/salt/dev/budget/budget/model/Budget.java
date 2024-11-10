@@ -1,9 +1,6 @@
 package salt.dev.budget.budget.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,10 +10,10 @@ public class Budget {
     @Id
     private long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Expense> expenses;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Income> incomes;
 
     public Budget() {
