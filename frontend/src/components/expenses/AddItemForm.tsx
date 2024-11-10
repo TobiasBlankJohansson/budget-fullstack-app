@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { budgetItem } from "../Item";
+import { addExpense } from "../../api/expense";
 
 type inputAddItemForm = {
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
@@ -12,17 +13,16 @@ export function AddItemForm({ setBudgetItem, type }: inputAddItemForm) {
 
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const mockItem: budgetItem = {
-      id: "10",
-      name: item,
-      sum: Number(amount),
-      type: type,
-    };
+    const newIncome: budgetItem = await addExpense(
+      2000,
+      item,
+      Number(amount),
+      type
+    );
     //todo:add fetch to place item in data base
     setItem("");
     setAmount("");
-    event.currentTarget.reset();
-    setBudgetItem((prev) => [...prev, mockItem]);
+    setBudgetItem((prev) => [...prev, newIncome]);
   };
 
   return (
