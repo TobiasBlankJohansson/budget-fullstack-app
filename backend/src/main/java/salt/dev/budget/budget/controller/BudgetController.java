@@ -25,6 +25,6 @@ public class BudgetController {
 
     @GetMapping("{id}/income")
     public ResponseEntity<List<Income>> getIncomeList(@PathVariable long id){
-        return null;
+        return ResponseEntity.ok(service.getIncomeList(id));
     }
 }
