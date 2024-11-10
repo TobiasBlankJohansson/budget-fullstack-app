@@ -1,4 +1,8 @@
 package salt.dev.budget.budget.repository;
 
-public class BudgetRepository {
+
+import org.springframework.data.repository.ListCrudRepository;
+import salt.dev.budget.budget.model.Budget;
+
+public interface BudgetRepository extends ListCrudRepository<Budget,Long> {
 }
