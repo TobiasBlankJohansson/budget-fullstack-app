@@ -1,6 +1,6 @@
 import { budgetItem } from "../components/Item";
 
-const path = import.meta.env.BUDGET_PATH;
+const path = import.meta.env.VITE_BUDGET_PATH;
 
 export async function getIncome(budgetId: number): Promise<budgetItem[]> {
   var response = await fetch(`${path}/${budgetId}`);
