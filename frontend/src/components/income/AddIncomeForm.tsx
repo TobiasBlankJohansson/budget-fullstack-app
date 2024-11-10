@@ -18,10 +18,10 @@ export function AddIncomeForm({ setItems }: inputAddIncome) {
       Number(amount),
       "Income"
     );
+    console.log(newIncome);
     //add respons if fail
     setItem("");
     setAmount("");
-    event.currentTarget.reset();
     setItems((prev) => [...prev, newIncome]);
   };
 

@@ -37,7 +37,7 @@ export function BudgetApp() {
       setIncomeItem(() => incomeList);
     };
     getList();
-  }, []);
+  }, [income]);
 
   return (
     <>
