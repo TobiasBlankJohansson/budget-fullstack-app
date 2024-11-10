@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface ExpenseRepository extends ListCrudRepository<Expense,Long> {
     List<Expense> findAllByBudget(Budget budget);
-
+    Expense findByBudgetAndId(Budget budget, long expenseId);
 }

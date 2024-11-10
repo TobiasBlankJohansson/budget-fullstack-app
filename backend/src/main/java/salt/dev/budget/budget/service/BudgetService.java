@@ -36,6 +36,13 @@ public class BudgetService {
         return incomeRepo.save(income);
     }
 
+    public void removeIncome(long budgetId, long incomeId){
+        var budget = repo.findById(budgetId)
+                .orElseThrow(NoSuchElementException::new);
+        var income = incomeRepo.findByBudgetAndId(budget, incomeId);
+        incomeRepo.delete(income);
+    }
+
     public List<Expense> getExpenseList(long budgetId) throws NoSuchElementException {
         var budget = repo.findById(budgetId)
                 .orElseThrow(NoSuchElementException::new);
@@ -48,5 +55,12 @@ public class BudgetService {
                 .orElseThrow(NoSuchElementException::new);
         var expense = new Expense(name,sum,type,budget);
         return expenseRepo.save(expense);
+    }
+
+    public void removeExpense(long budgetId, long expenseId){
+        var budget = repo.findById(budgetId)
+                .orElseThrow(NoSuchElementException::new);
+        var expense = expenseRepo.findByBudgetAndId(budget, expenseId);
+        expenseRepo.delete(expense);
     }
 }

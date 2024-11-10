@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface IncomeRepository extends ListCrudRepository<Income,Long> {
     List<Income> findAllByBudget(Budget budget);
+    Income findByBudgetAndId(Budget budget, long incomeId);
 }
