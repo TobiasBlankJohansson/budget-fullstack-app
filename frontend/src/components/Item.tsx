@@ -6,8 +6,11 @@ export type budgetItem = {
 };
 
 export function Item({ id, name, sum }: budgetItem) {
+  const handelClick = () =>{
+  }
+
   return (
-    <tr key={id}>
+    <tr key={id} onClick={handelClick}>
       <th>{name}</th>
       <td>{sum}</td>
     </tr>
