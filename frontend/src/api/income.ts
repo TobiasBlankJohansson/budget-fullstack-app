@@ -7,7 +7,6 @@ export async function getIncome(budgetId: number): Promise<budgetItem[]> {
   if (!response.ok) {
     throw new Error();
   }
-
   return response.json();
 }
 
@@ -28,4 +27,23 @@ export async function addIncome(
     throw new Error();
   }
   return response.json();
+}
+
+export async function removeIncome(
+  budgetId: number,
+  incomeId: number
+): Promise<void> {
+  var response = await fetch(
+    `${path}api/budget/${budgetId}/expense/${incomeId}`,
+    {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/JSON",
+      },
+      body: JSON.stringify({ budgetId, incomeId }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error();
+  }
 }

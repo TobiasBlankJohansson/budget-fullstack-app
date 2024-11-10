@@ -29,3 +29,22 @@ export async function addExpense(
   }
   return response.json();
 }
+
+export async function removeExpense(
+  budgetId: number,
+  expenseId: number
+): Promise<void> {
+  var response = await fetch(
+    `${path}api/budget/${budgetId}/expense/${expenseId}`,
+    {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/JSON",
+      },
+      body: JSON.stringify({ budgetId, expenseId }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error();
+  }
+}
