@@ -12,7 +12,12 @@ export function AddIncomeForm({ setItems }: inputAddIncome) {
 
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const newIncome:budgetItem = await addIncome(2000, item, Number(amount), "Income");
+    const newIncome: budgetItem = await addIncome(
+      2000,
+      item,
+      Number(amount),
+      "Income"
+    );
     //add respons if fail
     setItem("");
     setAmount("");
