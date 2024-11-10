@@ -28,6 +28,7 @@ public class BudgetController {
     @PostMapping("{id}/income")
     public ResponseEntity<Income> addIncomeList(
             @PathVariable long id, @RequestBody RequestIncomeDto incomeDto){
-        return null;
+        return ResponseEntity.accepted().body(
+                service.addIncome(id,incomeDto.name(),incomeDto.sum(),incomeDto.type()));
     }
 }
