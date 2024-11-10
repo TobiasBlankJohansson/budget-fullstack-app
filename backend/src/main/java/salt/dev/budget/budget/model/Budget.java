@@ -14,9 +14,29 @@ public class Budget {
     private long id;
 
     @OneToMany
-    private List<Expence> expences;
+    private List<Expense> expenses;
 
     @OneToMany
     private List<Income> incomes;
 
+    public Budget() {
+    }
+
+    public Budget(long id, List<Expence> expenses, List<Income> incomes) {
+        this.id = id;
+        this.expenses = expenses;
+        this.incomes = incomes;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public List<Expence> getExpenses() {
+        return expenses;
+    }
+
+    public List<Income> getIncomes() {
+        return incomes;
+    }
 }
