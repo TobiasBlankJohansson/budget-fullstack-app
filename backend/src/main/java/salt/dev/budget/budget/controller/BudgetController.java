@@ -34,6 +34,11 @@ public class BudgetController {
                 service.addIncome(id,incomeDto.name(),incomeDto.sum(),incomeDto.type()));
     }
 
+    @DeleteMapping("{budgetId}/expense/{incomeId}")
+    public ResponseEntity<Void> removeIncome(@PathVariable long budgetId, @PathVariable long incomeId){
+        return null;
+    }
+
     @GetMapping("{id}/expense")
     public ResponseEntity<List<Expense>> getExpenseList(@PathVariable long id){
         return ResponseEntity.ok(service.getExpenseList(id));
@@ -44,6 +49,11 @@ public class BudgetController {
             @PathVariable long id, @RequestBody RequestIncomeDto incomeDto){
         return ResponseEntity.accepted().body(
                 service.addExpense(id,incomeDto.name(),incomeDto.sum(),incomeDto.type()));
+    }
+
+    @DeleteMapping("{budgetId}/expense/{expenseId}")
+    public ResponseEntity<Void> removeExpense(@PathVariable long budgetId, @PathVariable long expenseId){
+        return null;
     }
 
 }
