@@ -7,6 +7,8 @@ type inputBudgetCard = {
   items: budgetItem[];
   budget: number;
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
+  selected: string | undefined;
+  setSelected: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
 export function BudgetCard({
@@ -14,6 +16,8 @@ export function BudgetCard({
   items,
   budget,
   setBudgetItem,
+  selected,
+  setSelected,
 }: inputBudgetCard) {
   const [canSpend, setCanSpend] = useState<number>(0);
   const [totalSpend, setTotalSpend] = useState<number>(0);
@@ -38,7 +42,15 @@ export function BudgetCard({
             <td>Item</td>
             <td>Amount</td>
           </tr>
-          {items.map((item) => Item(item))}
+          {items.map((item) =>
+            Item({
+              id: item.id,
+              name: item.name,
+              sum: item.sum,
+              selected: selected,
+              setSelected: setSelected,
+            })
+          )}
         </table>
         <AddItemForm setBudgetItem={setBudgetItem} type={type} />
         <p>Total spent: {totalSpend}</p>

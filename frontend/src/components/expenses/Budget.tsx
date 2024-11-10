@@ -32,6 +32,7 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
     wants: 0.3,
     saves: 0.2,
   });
+  const [selected, setSelected] = useState<string>();
 
   useEffect(() => {
     let needsArr: budgetItem[] = [];
@@ -64,18 +65,24 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
         items={cardItems.needs}
         budget={budgetRule.needs * income}
         setBudgetItem={setBudgetItem}
+        selected={selected}
+        setSelected={setSelected}
       />
       <BudgetCard
         type={"Wants"}
         items={cardItems.wants}
         budget={budgetRule.wants * income}
         setBudgetItem={setBudgetItem}
+        selected={selected}
+        setSelected={setSelected}
       />
       <BudgetCard
         type={"Saves"}
         items={cardItems.saves}
         budget={budgetRule.saves * income}
         setBudgetItem={setBudgetItem}
+        selected={selected}
+        setSelected={setSelected}
       />
       <BudgetSetRule setCardItems={setBudgetRule} />
     </div>
