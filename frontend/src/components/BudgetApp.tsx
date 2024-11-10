@@ -5,30 +5,9 @@ import { DisplayIncome } from "./income/DisplayIncome";
 import { Income } from "./income/Income";
 import { getIncome } from "../api/income";
 
-const Items: budgetItem[] = [
-  {
-    id: "1",
-    name: "Stuff",
-    sum: 50,
-    type: "Needs",
-  },
-  {
-    id: "2",
-    name: "Stuff",
-    sum: 50,
-    type: "Wants",
-  },
-  {
-    id: "3",
-    name: "Stuff",
-    sum: 50,
-    type: "Saves",
-  },
-];
-
 export function BudgetApp() {
-  const [budgetItem, setBudgetItem] = useState<budgetItem[]>(Items);
-  const [incomeItem, setIncomeItem] = useState<budgetItem[]>(Items);
+  const [budgetItem, setBudgetItem] = useState<budgetItem[]>([]);
+  const [incomeItem, setIncomeItem] = useState<budgetItem[]>([]);
   const [income, setIncome] = useState<number>(100);
 
   useEffect(() => {
