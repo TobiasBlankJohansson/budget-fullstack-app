@@ -8,6 +8,6 @@ import salt.dev.budget.budget.model.Income;
 import java.util.List;
 
 public interface ExpenseRepository extends ListCrudRepository<Expense,Long> {
-    List<Income> findAllByBudget(Budget budget);
+    List<Expense> findAllByBudget(Budget budget);
 
 }
