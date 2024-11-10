@@ -8,6 +8,7 @@ import salt.dev.budget.budget.service.BudgetService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/budget/")
 public class BudgetController {
