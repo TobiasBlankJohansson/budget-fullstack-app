@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Budget } from "./expenses";
 import { budgetItem } from "./Item";
 import { DisplayIncome } from "./income/DisplayIncome";
 import { Income } from "./income/Income";
+import { getIncome } from "../api/income";
 
 const Items: budgetItem[] = [
   {
@@ -29,6 +30,14 @@ export function BudgetApp() {
   const [budgetItem, setBudgetItem] = useState<budgetItem[]>(Items);
   const [incomeItem, setIncomeItem] = useState<budgetItem[]>(Items);
   const [income, setIncome] = useState<number>(100);
+
+  useEffect(() => {
+    const getList = async () => {
+      const incomeList = await getIncome(2000);
+      setIncomeItem(() => incomeList);
+    };
+    getList();
+  }, []);
 
   return (
     <>
