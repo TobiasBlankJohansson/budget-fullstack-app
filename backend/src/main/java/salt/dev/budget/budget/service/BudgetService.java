@@ -15,10 +15,18 @@ public class BudgetService {
         this.repo = repo;
     }
 
-    public List<Income> getIncomeList(long id) throws NoSuchElementException {
-        var budget = repo.findById(id)
+    public List<Income> getIncomeList(long budgetId) throws NoSuchElementException {
+        var budget = repo.findById(budgetId)
                 .orElseThrow(NoSuchElementException::new);
         return budget.getIncomes();
         //todo:make good Exception
+    }
+
+    public Income addIncome(long budgetId, String name, long sum, String type) {
+        var budget = repo.findById(budgetId)
+                .orElseThrow(NoSuchElementException::new);
+        var income = new Income(name,sum,type,budget);
+        budget.getIncomes().add(income);
+        return income;
     }
 }
