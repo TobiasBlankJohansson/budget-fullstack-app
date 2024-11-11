@@ -25,13 +25,37 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
   };
 
   return (
-    <article>
-      <form onSubmit={handelSubmit}>
-        <label>Needs</label>
-        <input type="number" id="needs" min={0} required></input>
-        <label>Whants</label>
-        <input type="number" id="wants" min={0} required></input>
-        <button type="submit">Save</button>
+    <article className="budget__main__budget-card-container__set-rule">
+      <form
+        className="budget__main__budget-card-container__set-rule__form"
+        onSubmit={handelSubmit}
+      >
+        <label className="budget__main__budget-card-container__set-rule__form__label-needs">
+          Needs
+        </label>
+        <input
+          className="budget__main__budget-card-container__set-rule__form__input-needs"
+          type="number"
+          id="needs"
+          min={0}
+          required
+        ></input>
+        <label className="budget__main__budget-card-container__set-rule__form__label-wants">
+          Wants
+        </label>
+        <input
+          className="budget__main__budget-card-container__set-rule__form__input-wants"
+          type="number"
+          id="wants"
+          min={0}
+          required
+        ></input>
+        <button
+          className="budget__main__budget-card-container__set-rule__form__button"
+          type="submit"
+        >
+          Save
+        </button>
       </form>
     </article>
   );
