@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   postgres:
-    image: 'postgres:15'
-    container_name: 'salt-postgres'
+    image: "postgres:15"
+    container_name: "budget-postgres"
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
