@@ -1,0 +1,31 @@
+.item__dh button {
+  margin-left: 10px;
+  padding: 2px 8px;
+  font-size: 0.9em;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.item__th {
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.item__th:nth-child(even) {
+  background-color: #f3f5f7;
+}
+
+.item__dh {
+  padding: 10px;
+  color: #555;
+}
