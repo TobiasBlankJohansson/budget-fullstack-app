@@ -48,16 +48,16 @@ export function BudgetCard({
   };
 
   return (
-    <section>
-      <header>
-        <h3>{type}</h3>
+    <section className="budget__main__budget-card-container__budget-card">
+      <header className="budget__main__budget-card-container__budget-card__header">
+        <h3 className="budget__main__budget-card-container__budget-card__header__h3">{type}</h3>
       </header>
-      <article>
-        <p>Can spend: {canSpend}</p>
-        <table>
-          <tr>
-            <td>Item</td>
-            <td>Amount</td>
+      <article className="budget__main__budget-card-container__budget-card__article">
+        <p className="budget__main__budget-card-container__budget-card__article__p--can-spend">Can spend: {canSpend}</p>
+        <table className="budget__main__budget-card-container__budget-card__article__table">
+          <tr className="budget__main__budget-card-container__budget-card__article__tr">
+            <td className="budget__main__budget-card-container__budget-card__article__td">Item</td>
+            <td className="budget__main__budget-card-container__budget-card__article__td">Amount</td>
           </tr>
           {items.map((item) =>
             Item({
@@ -71,7 +71,7 @@ export function BudgetCard({
           )}
         </table>
         <AddItemForm setBudgetItem={setBudgetItem} type={type} />
-        <p>Total spent: {totalSpend}</p>
+        <p className="budget__main__budget-card-container__budget-card__article__p--total-spend">Total spent: {totalSpend}</p>
       </article>
     </section>
   );

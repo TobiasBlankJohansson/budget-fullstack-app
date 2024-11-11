@@ -28,7 +28,7 @@ export function Income({
   }, [items]);
 
   return (
-    <section>
+    <section className="budget__main__container-income">
       <AddIncomeForm setItems={setItems} budgetId={budgetId} />
       <DisplayIncomeList
         items={items}

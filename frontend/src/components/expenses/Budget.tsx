@@ -65,7 +65,7 @@ export function Budget({
   }, [items]);
 
   return (
-    <div>
+    <section className="budget__main__budget-card-container">
       <BudgetCard
         type={"Needs"}
         items={cardItems.needs}

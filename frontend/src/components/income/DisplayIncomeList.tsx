@@ -31,9 +31,11 @@ export function DisplayIncomeList({
   };
 
   return (
-    <section>
-      <h2>Income</h2>
-      <table>
+    <section className="budget__main__container-income__display-income">
+      <h2 className="budget__main__container-income__display-income__h2">
+        Income
+      </h2>
+      <table className="budget__main__container-income__display-income__table">
         {items.map((item) =>
           Item({
             id: item.id,
@@ -45,7 +47,9 @@ export function DisplayIncomeList({
           })
         )}
       </table>
-      <p>Total income: {totalIncome}</p>
+      <p className="budget__main__container-income__display-income__p">
+        Total income: {totalIncome}
+      </p>
     </section>
   );
 }

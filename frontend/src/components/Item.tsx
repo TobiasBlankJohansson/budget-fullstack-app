@@ -26,9 +26,11 @@ export function Item({
     setSelected(id);
   };
   return (
-    <tr key={id}>
-      <th onClick={handelClick}>{name}</th>
-      <td>
+    <tr className="item" key={id}>
+      <th className="item__th" onClick={handelClick}>
+        {name}
+      </th>
+      <td className="item__dh">
         {sum}
         {selected === id && (
           <button onClick={() => handelRemove(id)}>remove</button>

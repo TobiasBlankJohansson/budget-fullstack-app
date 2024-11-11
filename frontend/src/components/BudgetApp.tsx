@@ -33,8 +33,10 @@ export function BudgetApp() {
 
   return (
     <>
-      <main>
-        <h1>myBudget</h1>
+      <header className="budget__header">
+        <h1 className="budget__header__h1">myBudget</h1>
+      </header>
+      <main className="budget__main">
         <DisplayIncome income={income} />
         <Budget
           income={income}
