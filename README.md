@@ -1,6 +1,6 @@
 ## MyBudget
 
-#Core ide
+# Core ide
 It makes it easy to track your budget, including what you spend on your needs, wants, and savings. It lets you decide on a rule for your budget in percent. For example, if you need to spend 50 % of your budget on needs and you decide to put aside 30 % for your wants, it will calculate how much you can spend on each based on the present.
 
 # Featchers
