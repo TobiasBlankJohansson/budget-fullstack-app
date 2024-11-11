@@ -39,6 +39,7 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
               type="number"
               id="needs"
               min={0}
+              max={100}
               required
             ></input>
           }
@@ -51,6 +52,7 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
               type="number"
               id="wants"
               min={0}
+              max={100}
               required
             ></input>
           }
