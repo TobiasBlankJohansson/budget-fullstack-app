@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { budgetItem, Item } from "../Item";
 import { AddItemForm } from "./AddItemForm";
+import { removeExpense } from "../../api/expense";
 
 type inputBudgetCard = {
   type: string;
@@ -30,6 +31,13 @@ export function BudgetCard({
     setTotalSpend(() => spent);
   }, [items, budget]);
 
+  const handelRemove = async (expenseId: number) => {
+    await removeExpense(2000, expenseId);
+    setBudgetItem((prev) =>
+      prev.filter((item) => Number(item.id) != expenseId)
+    );
+  };
+
   return (
     <section>
       <header>
@@ -49,6 +57,7 @@ export function BudgetCard({
               sum: item.sum,
               selected: selected,
               setSelected: setSelected,
+              handelRemove: handelRemove,
             })
           )}
         </table>

@@ -4,6 +4,7 @@ type inputItem = {
   sum: number;
   selected: string | undefined;
   setSelected: React.Dispatch<React.SetStateAction<string | undefined>>;
+  handelRemove: Function;
 };
 
 export type budgetItem = {
@@ -13,17 +14,25 @@ export type budgetItem = {
   type: string;
 };
 
-export function Item({ id, name, sum, selected, setSelected }: inputItem) {
+export function Item({
+  id,
+  name,
+  sum,
+  selected,
+  setSelected,
+  handelRemove,
+}: inputItem) {
   const handelClick = () => {
     setSelected(id);
   };
-
   return (
     <tr key={id}>
       <th onClick={handelClick}>{name}</th>
       <td>
         {sum}
-        {selected === id && <button>remove</button>}
+        {selected === id && (
+          <button onClick={() => handelRemove(id)}>remove</button>
+        )}
       </td>
     </tr>
   );
