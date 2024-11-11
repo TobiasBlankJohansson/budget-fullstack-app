@@ -19,6 +19,10 @@ public class Budget {
     public Budget() {
     }
 
+    public Budget(long id) {
+        this.id = id;
+    }
+
     public Budget(long id, List<Expense> expenses, List<Income> incomes) {
         this.id = id;
         this.expenses = expenses;

@@ -1,6 +1,7 @@
 package salt.dev.budget.budget.service;
 
 import org.springframework.stereotype.Service;
+import salt.dev.budget.budget.model.Budget;
 import salt.dev.budget.budget.model.Expense;
 import salt.dev.budget.budget.model.Income;
 import salt.dev.budget.budget.repository.BudgetRepository;
@@ -20,6 +21,10 @@ public class BudgetService {
         this.repo = repo;
         this.incomeRepo = incomeRepo;
         this.expenseRepo = expenseRepo;
+    }
+
+    public Budget addBudget(long budgetId){
+        return repo.findById(budgetId).orElse(repo.save(new Budget(budgetId)));
     }
 
     public List<Income> getIncomeList(long budgetId) throws NoSuchElementException {
