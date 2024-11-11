@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { budgetItem } from "../Item";
 import { addIncome } from "../../api/income";
+import { toast } from "react-toastify";
 
 type inputAddIncome = {
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
@@ -12,17 +13,22 @@ export function AddIncomeForm({ setItems }: inputAddIncome) {
 
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const newIncome: budgetItem = await addIncome(
-      2000,
-      item,
-      Number(amount),
-      "Income"
-    );
-    console.log(newIncome);
-    //add respons if fail
-    setItem("");
-    setAmount("");
-    setItems((prev) => [...prev, newIncome]);
+    toast.info("Loading...");
+    try {
+      const newIncome: budgetItem = await addIncome(
+        2000,
+        item,
+        Number(amount),
+        "Income"
+      );
+      console.log(newIncome);
+      setItem("");
+      setAmount("");
+      setItems((prev) => [...prev, newIncome]);
+      toast.success("success");
+    } catch {
+      toast.error("try, again");
+    }
   };
 
   return (

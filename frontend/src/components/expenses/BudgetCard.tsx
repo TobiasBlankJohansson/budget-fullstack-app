@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { budgetItem, Item } from "../Item";
 import { AddItemForm } from "./AddItemForm";
 import { removeExpense } from "../../api/expense";
+import { toast } from "react-toastify";
 
 type inputBudgetCard = {
   type: string;
@@ -32,10 +33,16 @@ export function BudgetCard({
   }, [items, budget]);
 
   const handelRemove = async (expenseId: number) => {
-    await removeExpense(2000, expenseId);
-    setBudgetItem((prev) =>
-      prev.filter((item) => Number(item.id) != expenseId)
-    );
+    toast.info("Loading...");
+    try {
+      await removeExpense(2000, expenseId);
+      setBudgetItem((prev) =>
+        prev.filter((item) => Number(item.id) != expenseId)
+      );
+      toast.success("success");
+    } catch {
+      toast.error("try, again");
+    }
   };
 
   return (

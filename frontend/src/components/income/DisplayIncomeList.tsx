@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { removeIncome } from "../../api/income";
 import { budgetItem, Item } from "../Item";
 
@@ -17,8 +18,14 @@ export function DisplayIncomeList({
   setSelected,
 }: inputDisplayIncomeList) {
   const handelRemove = async (expenseId: number) => {
-    await removeIncome(2000, expenseId);
-    setItems((prev) => prev.filter((item) => Number(item.id) != expenseId));
+    toast.info("Loading...");
+    try {
+      await removeIncome(2000, expenseId);
+      setItems((prev) => prev.filter((item) => Number(item.id) != expenseId));
+      toast.success("success");
+    } catch {
+      toast.error("try, again");
+    }
   };
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { budgetItem } from "../Item";
 import { addExpense } from "../../api/expense";
+import { Bounce, toast } from "react-toastify";
 
 type inputAddItemForm = {
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
@@ -13,16 +14,22 @@ export function AddItemForm({ setBudgetItem, type }: inputAddItemForm) {
 
   const handelSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const newIncome: budgetItem = await addExpense(
-      2000,
-      item,
-      Number(amount),
-      type
-    );
-    //todo:add fetch to place item in data base
-    setItem("");
-    setAmount("");
-    setBudgetItem((prev) => [...prev, newIncome]);
+    toast.info("Loading...");
+    try {
+      const newIncome: budgetItem = await addExpense(
+        2000,
+        item,
+        Number(amount),
+        type
+      );
+      setItem("");
+      setAmount("");
+      setBudgetItem((prev) => [...prev, newIncome]);
+
+      toast.success("success");
+    } catch {
+      toast.error("try, again");
+    }
   };
 
   return (
