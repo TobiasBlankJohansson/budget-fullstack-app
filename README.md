@@ -1,9 +1,9 @@
-MyBudget:
+##MyBudget
 
-Core ide:
-Make it easy to track your budget on what you spend on your needs, whants and what you save. It lets you deside on a rule on your budget in procent for exampel if you need to spend 50 % of your budget on needs and you deside that you will put aside 30 % to your whants it will calculate how mutch you can spend on each base on the prosent.
+#Core ide
+Make it easy to track your budget on what you spend on your needs, whants and what you save. It lets you deside on a rule on your budget in procent for exampel if you need to spend 50 % of your budget on needs and you deside that you will put aside 30 % to your whants it will calculate how mutch you can spend on each base on the present.
 
-Featchers:
+#Featchers
     • Input income
     • Display income
     • Change budget rule
@@ -11,7 +11,7 @@ Featchers:
     • Input expens
     • Display expens
 
-How to build and run:
+#How to build and run
     1. Clone project
     2. In root of project, open ”docker-compose.yml” and change username, password and db to what you prefer.
     3. In the commandline in root of project ”docker compose up”.
