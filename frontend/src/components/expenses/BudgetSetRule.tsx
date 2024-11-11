@@ -23,6 +23,7 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
     }
     event.currentTarget.reset();
     setCardItems(() => ({ needs: needs, wants: wants, saves: saves }));
+    toast.success("Success");
   };
 
   return (
