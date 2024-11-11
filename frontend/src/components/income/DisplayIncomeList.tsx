@@ -1,3 +1,4 @@
+import { removeIncome } from "../../api/income";
 import { budgetItem, Item } from "../Item";
 
 type inputDisplayIncomeList = {
@@ -15,6 +16,11 @@ export function DisplayIncomeList({
   selected,
   setSelected,
 }: inputDisplayIncomeList) {
+  const handelRemove = async (expenseId: number) => {
+    await removeIncome(2000, expenseId);
+    setItems((prev) => prev.filter((item) => Number(item.id) != expenseId));
+  };
+
   return (
     <section>
       <h2>Income</h2>
@@ -26,6 +32,7 @@ export function DisplayIncomeList({
             sum: item.sum,
             selected: selected,
             setSelected: setSelected,
+            handelRemove: handelRemove,
           })
         )}
       </table>

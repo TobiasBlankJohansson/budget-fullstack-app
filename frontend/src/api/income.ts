@@ -34,7 +34,7 @@ export async function removeIncome(
   incomeId: number
 ): Promise<void> {
   var response = await fetch(
-    `${path}api/budget/${budgetId}/expense/${incomeId}`,
+    `${path}api/budget/${budgetId}/income/${incomeId}`,
     {
       method: "DELETE",
       headers: {
