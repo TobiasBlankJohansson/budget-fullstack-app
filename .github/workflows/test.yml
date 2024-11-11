@@ -24,3 +24,7 @@ jobs:
       - name: Build with Maven
         working-directory: ./backend
         run: mvn clean test
+        env:
+          URL_DB: jdbc:h2:mem:testdb
+          USERNAME_DB: sa
+          PASSWORD_DB: password
