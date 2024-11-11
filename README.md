@@ -15,5 +15,5 @@ It makes it easy to track your budget, including what you spend on your needs, w
     1. Clone project
     2. In the root of the project, open ”docker-compose.yml” and change username, password, and db to what you prefer.
     3. In the command line at the root of the project ”docker compose up”.
-    4. In backend/src/main/resources/, create ”application-dev.yml”. Add URL_DB, USERNAME_DB, and PASSWORD_DB with it corresponding from ”docker-compose.yml”.
-    5. In frontend/, create ”.env.local”. Add ”VITE_BUDGET_PATH” with the URL for the backend (the backend runs on port 3000). 
+    4. In the backend/, create ”.env.local”. Add URL_DB, USERNAME_DB, and PASSWORD_DB with it corresponding from ”docker-compose.yml”.
+    5. In the frontend/, create ”.env.local”. Add ”VITE_BUDGET_PATH” with the URL for the backend (the backend runs on port 3000). 
