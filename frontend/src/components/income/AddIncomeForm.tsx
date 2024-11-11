@@ -50,16 +50,23 @@ export function AddIncomeForm({ setItems, budgetId }: inputAddIncome) {
           onChange={(e) => setItem(e.target.value)}
           required
         />
-        <label className="budget__main__container-income__add-income__form__label-amount">Amount</label>
+        <label className="budget__main__container-income__add-income__form__label-amount">
+          Amount
+        </label>
         <input
-        className="budget__main__container-income__add-income__form__input-amount"
+          className="budget__main__container-income__add-income__form__input-amount"
           type="number"
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}
           min={1}
           required
         />
-        <button className="budget__main__container-income__add-income__form__button" type="submit">Add</button>
+        <button
+          className="budget__main__container-income__add-income__form__button"
+          type="submit"
+        >
+          Add
+        </button>
       </form>
     </section>
   );

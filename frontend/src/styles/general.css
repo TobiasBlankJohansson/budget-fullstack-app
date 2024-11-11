@@ -1,3 +1,7 @@
+.budget__main {
+  margin: 30px;
+}
+
 .budget__header__h1,
 .budget__main__container-income__add-income__h2,
 .budget__main__container-income__display-income__h2 {
