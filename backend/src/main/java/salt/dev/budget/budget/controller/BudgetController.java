@@ -2,12 +2,14 @@ package salt.dev.budget.budget.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import salt.dev.budget.budget.model.Expense;
 import salt.dev.budget.budget.model.Income;
 import salt.dev.budget.budget.service.BudgetService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @CrossOrigin
 @RestController
@@ -56,6 +58,11 @@ public class BudgetController {
     public ResponseEntity<Void> removeExpense(@PathVariable long budgetId, @PathVariable long expenseId){
         service.removeExpense(budgetId, expenseId);
         return ResponseEntity.ok().build();
+    }
+
+    @ExceptionHandler(NoSuchElementException.class)
+    public ResponseEntity<?> exceptionHandler(NoSuchElementException e){
+        return ResponseEntity.notFound().build();
     }
 
 }

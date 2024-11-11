@@ -26,7 +26,6 @@ public class BudgetService {
         var budget = repo.findById(budgetId)
                 .orElseThrow(NoSuchElementException::new);
         return incomeRepo.findAllByBudget(budget);
-        //todo:make good Exception
     }
 
     public Income addIncome(long budgetId, String name, long sum, String type) throws NoSuchElementException{
@@ -47,7 +46,6 @@ public class BudgetService {
         var budget = repo.findById(budgetId)
                 .orElseThrow(NoSuchElementException::new);
         return expenseRepo.findAllByBudget(budget);
-        //todo:make good Exception
     }
 
     public Expense addExpense(long budgetId, String name, long sum, String type) throws NoSuchElementException{
