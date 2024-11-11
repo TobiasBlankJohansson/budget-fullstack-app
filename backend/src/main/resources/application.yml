@@ -1,7 +1,7 @@
+
 api:
   budget:
     path: "/api/budget"
-
 debug: true
 server:
   port: 3000
@@ -18,11 +18,11 @@ spring:
     init:
       platform: postgresql
       mode: always
-    output:
-      ansi:
-        enabled: always
+  output:
+    ansi:
+      enabled: always
   config:
-    import: file:./src/main/resources/application-dev.yml
+    import: optional:file:.env.local[.properties]
 logging:
   level:
     org:
