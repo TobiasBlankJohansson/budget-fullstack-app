@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import salt.dev.budget.budget.model.Budget;
 import salt.dev.budget.budget.model.Expense;
 import salt.dev.budget.budget.model.Income;
 import salt.dev.budget.budget.service.BudgetService;
@@ -22,6 +23,11 @@ public class BudgetController {
     public BudgetController(@Value("${api.budget.path}")String BUDGET_PATH, BudgetService service) {
         this.BUDGET_PATH = BUDGET_PATH;
         this.service = service;
+    }
+
+    @GetMapping("{budgetId}")
+    public ResponseEntity<Budget> addBudget(@PathVariable long budgetId){
+        return ResponseEntity.ok(service.addBudget(budgetId));
     }
 
     @GetMapping("{id}/income")
