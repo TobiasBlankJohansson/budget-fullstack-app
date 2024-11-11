@@ -40,12 +40,14 @@ export function BudgetApp() {
           income={income}
           items={budgetItem}
           setBudgetItem={setBudgetItem}
+          budgetId={budgetId}
         />
         <Income
           items={incomeItem}
           income={income}
           setItems={setIncomeItem}
           setIncome={setIncome}
+          budgetId={budgetId}
         />
       </main>
     </>

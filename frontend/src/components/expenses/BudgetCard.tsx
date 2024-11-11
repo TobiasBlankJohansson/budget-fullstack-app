@@ -11,6 +11,7 @@ type inputBudgetCard = {
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
   selected: string | undefined;
   setSelected: React.Dispatch<React.SetStateAction<string | undefined>>;
+  budgetId: number;
 };
 
 export function BudgetCard({
@@ -20,6 +21,7 @@ export function BudgetCard({
   setBudgetItem,
   selected,
   setSelected,
+  budgetId,
 }: inputBudgetCard) {
   const [canSpend, setCanSpend] = useState<number>(0);
   const [totalSpend, setTotalSpend] = useState<number>(0);
@@ -35,7 +37,7 @@ export function BudgetCard({
   const handelRemove = async (expenseId: number) => {
     toast.info("Loading...");
     try {
-      await removeExpense(2000, expenseId);
+      await removeExpense(budgetId, expenseId);
       setBudgetItem((prev) =>
         prev.filter((item) => Number(item.id) != expenseId)
       );

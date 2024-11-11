@@ -5,9 +5,10 @@ import { toast } from "react-toastify";
 
 type inputAddIncome = {
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
+  budgetId: number;
 };
 
-export function AddIncomeForm({ setItems }: inputAddIncome) {
+export function AddIncomeForm({ setItems, budgetId }: inputAddIncome) {
   const [item, setItem] = useState<string>("");
   const [amount, setAmount] = useState<number | string>("");
 
@@ -16,7 +17,7 @@ export function AddIncomeForm({ setItems }: inputAddIncome) {
     toast.info("Loading...");
     try {
       const newIncome: budgetItem = await addIncome(
-        2000,
+        budgetId,
         item,
         Number(amount),
         "Income"

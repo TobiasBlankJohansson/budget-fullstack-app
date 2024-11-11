@@ -8,6 +8,7 @@ type inputDisplayIncomeList = {
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
   selected: string | undefined;
   setSelected: React.Dispatch<React.SetStateAction<string | undefined>>;
+  budgetId: number;
 };
 
 export function DisplayIncomeList({
@@ -16,11 +17,12 @@ export function DisplayIncomeList({
   totalIncome,
   selected,
   setSelected,
+  budgetId,
 }: inputDisplayIncomeList) {
   const handelRemove = async (expenseId: number) => {
     toast.info("Loading...");
     try {
-      await removeIncome(2000, expenseId);
+      await removeIncome(budgetId, expenseId);
       setItems((prev) => prev.filter((item) => Number(item.id) != expenseId));
       toast.success("success");
     } catch {

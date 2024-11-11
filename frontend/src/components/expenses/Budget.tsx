@@ -7,6 +7,7 @@ type inputBudget = {
   items: budgetItem[];
   income: number;
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;
+  budgetId: number;
 };
 
 type cardItems = {
@@ -21,7 +22,12 @@ export type budgetRule = {
   saves: number;
 };
 
-export function Budget({ items, income, setBudgetItem }: inputBudget) {
+export function Budget({
+  items,
+  income,
+  setBudgetItem,
+  budgetId,
+}: inputBudget) {
   const [cardItems, setcardItems] = useState<cardItems>({
     needs: [],
     wants: [],
@@ -67,6 +73,7 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
         setBudgetItem={setBudgetItem}
         selected={selected}
         setSelected={setSelected}
+        budgetId={budgetId}
       />
       <BudgetCard
         type={"Wants"}
@@ -75,6 +82,7 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
         setBudgetItem={setBudgetItem}
         selected={selected}
         setSelected={setSelected}
+        budgetId={budgetId}
       />
       <BudgetCard
         type={"Saves"}
@@ -83,6 +91,7 @@ export function Budget({ items, income, setBudgetItem }: inputBudget) {
         setBudgetItem={setBudgetItem}
         selected={selected}
         setSelected={setSelected}
+        budgetId={budgetId}
       />
       <BudgetSetRule setCardItems={setBudgetRule} />
     </div>

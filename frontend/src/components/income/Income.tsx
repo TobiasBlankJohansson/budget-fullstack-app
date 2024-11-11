@@ -8,9 +8,16 @@ type inputIncome = {
   income: number;
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;
   setIncome: React.Dispatch<React.SetStateAction<number>>;
+  budgetId: number;
 };
 
-export function Income({ items, income, setItems, setIncome }: inputIncome) {
+export function Income({
+  items,
+  income,
+  setItems,
+  setIncome,
+  budgetId,
+}: inputIncome) {
   const [selected, setSelected] = useState<string>();
   useEffect(() => {
     let count = 0;
@@ -22,13 +29,14 @@ export function Income({ items, income, setItems, setIncome }: inputIncome) {
 
   return (
     <section>
-      <AddIncomeForm setItems={setItems} />
+      <AddIncomeForm setItems={setItems} budgetId={budgetId} />
       <DisplayIncomeList
         items={items}
         setItems={setItems}
         totalIncome={income}
         selected={selected}
         setSelected={setSelected}
+        budgetId={budgetId}
       />
     </section>
   );
