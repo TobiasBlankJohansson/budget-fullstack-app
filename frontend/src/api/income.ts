@@ -3,7 +3,7 @@ import { budgetItem } from "../components/Item";
 const path = import.meta.env.VITE_BUDGET_PATH;
 
 export async function getIncome(budgetId: number): Promise<budgetItem[]> {
-  var response = await fetch(`${path}api/budget/${budgetId}/income`);
+  const response = await fetch(`${path}api/budget/${budgetId}/income`);
   if (!response.ok) {
     throw new Error();
   }
@@ -16,7 +16,7 @@ export async function addIncome(
   sum: number,
   type: string
 ): Promise<budgetItem> {
-  var response = await fetch(`${path}api/budget/${budgetId}/income`, {
+  const response = await fetch(`${path}api/budget/${budgetId}/income`, {
     method: "POST",
     headers: {
       "content-type": "application/JSON",
@@ -33,7 +33,7 @@ export async function removeIncome(
   budgetId: number,
   incomeId: number
 ): Promise<void> {
-  var response = await fetch(
+  const response = await fetch(
     `${path}api/budget/${budgetId}/income/${incomeId}`,
     {
       method: "DELETE",
