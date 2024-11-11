@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { budgetItem } from "../Item";
 import { addIncome } from "../../api/income";
 import { toast } from "react-toastify";
+import { budgetItem } from "../../types/budget";
 
 type inputAddIncome = {
   setItems: React.Dispatch<React.SetStateAction<budgetItem[]>>;

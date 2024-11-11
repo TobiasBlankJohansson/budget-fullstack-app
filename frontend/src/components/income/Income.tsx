@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { budgetItem } from "../Item";
 import { DisplayIncomeList } from "./DisplayIncomeList";
 import { AddIncomeForm } from "./AddIncomeForm";
+import { budgetItem } from "../../types/budget";
 
 type inputIncome = {
   items: budgetItem[];

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { budgetItem, Item } from "../Item";
+import {Item } from "../Item";
 import { AddItemForm } from "./AddItemForm";
 import { removeExpense } from "../../api/expense";
 import { toast } from "react-toastify";
+import { budgetItem } from "../../types/budget";
 
 type inputBudgetCard = {
   type: string;

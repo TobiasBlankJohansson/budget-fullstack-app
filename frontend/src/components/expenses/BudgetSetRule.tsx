@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { budgetRule } from "./Budget";
+import { budgetRule } from "../../types/budget";
 
 type inputBudgetSetRule = {
   setCardItems: React.Dispatch<React.SetStateAction<budgetRule>>;

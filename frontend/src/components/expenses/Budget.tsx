@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BudgetCard } from "./BudgetCard";
-import { budgetItem } from "../Item";
 import { BudgetSetRule } from "./BudgetSetRule";
+import { budgetItem, budgetRule } from "../../types/budget";
 
 type inputBudget = {
   items: budgetItem[];
@@ -14,12 +14,6 @@ type cardItems = {
   needs: budgetItem[];
   wants: budgetItem[];
   saves: budgetItem[];
-};
-
-export type budgetRule = {
-  needs: number;
-  wants: number;
-  saves: number;
 };
 
 export function Budget({

@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import { removeIncome } from "../../api/income";
-import { budgetItem, Item } from "../Item";
+import {Item } from "../Item";
+import { budgetItem } from "../../types/budget";
 
 type inputDisplayIncomeList = {
   totalIncome: number;

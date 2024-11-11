@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { budgetItem } from "../Item";
 import { addExpense } from "../../api/expense";
-import { Bounce, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { budgetItem } from "../../types/budget";
 
 type inputAddItemForm = {
   setBudgetItem: React.Dispatch<React.SetStateAction<budgetItem[]>>;

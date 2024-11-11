@@ -7,13 +7,6 @@ type inputItem = {
   handelRemove: Function;
 };
 
-export type budgetItem = {
-  id: string;
-  name: string;
-  sum: number;
-  type: string;
-};
-
 export function Item({
   id,
   name,
