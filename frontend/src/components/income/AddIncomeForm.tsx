@@ -21,7 +21,6 @@ export function AddIncomeForm({ setItems }: inputAddIncome) {
         Number(amount),
         "Income"
       );
-      console.log(newIncome);
       setItem("");
       setAmount("");
       setItems((prev) => [...prev, newIncome]);

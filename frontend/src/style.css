@@ -1,141 +1,153 @@
+/* Reset default styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
 }
 
+/* Main container styling */
 main {
-  max-width: 1200px;
+  max-width: 1200px; /* Max width suited for 1440px screens */
   margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Increased padding for larger screens */
 }
 
-h2 {
-  color: #2c3e50;
-  font-size: 1.8em;
-  margin-bottom: 15px;
+/* Title and headers */
+h1, h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
 }
 
 h3 {
-  color: #34495e;
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.5rem;
 }
 
+/* Section layout */
 section {
-  margin-bottom: 30px;
+  margin: 25px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-header {
-  margin-bottom: 10px;
+/* Budget category sections (Needs, Wants, Saves) */
+section > article {
+  margin: 15px 0;
 }
 
-article {
-  background-color: #ecf0f1;
-  padding: 15px;
-  border-radius: 6px;
+section header {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
 }
 
-form {
-  margin-top: 20px;
-  display: grid;
-  grid-gap: 10px;
-}
-
-form label {
+/* Spending and income information */
+p {
   font-weight: bold;
+  color: #555;
+  margin-bottom: 12px;
+  font-size: 1rem;
 }
 
-input[type="text"],
-input[type="number"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-}
-
-button[type="submit"] {
-  padding: 10px;
-  background-color: #2980b9;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-  background-color: #3498db;
-}
-
+/* Table styling */
 table {
   width: 100%;
+  margin-bottom: 15px;
   border-collapse: collapse;
-  margin-top: 15px;
 }
 
-table,
-th,
-td {
-  border: 1px solid #ccc;
+table, th, td {
+  border: 1px solid #ddd;
 }
 
-th,
-td {
-  padding: 8px;
+th, td {
+  padding: 12px;
   text-align: left;
+  font-size: 1rem;
 }
 
 th {
-  background-color: #34495e;
-  color: white;
+  background-color: #f2f2f2;
 }
 
-td {
-  background-color: #ecf0f1;
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-p {
-  margin-top: 15px;
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 1rem;
 }
 
-section table {
-  margin-top: 20px;
+input[type="text"], input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px; /* Constrains input width for better alignment */
 }
 
-form input[type="number"] {
-  width: auto;
+button {
+  align-self: start;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#needs,
-#wants {
-  width: auto;
+button:hover {
+  background-color: #0056b3;
 }
 
-/* Grid Layout for main container */
-div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+/* Layout for "Can spend" and "Total spent" information */
+article > p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #666;
 }
 
-section section {
-  grid-column: span 2;
+/* Responsive design adjustments */
+@media (max-width: 1440px) {
+  main {
+      max-width: 90%; /* Slightly reduced main width on smaller screens */
+  }
+
+  button {
+      width: auto;
+      padding: 12px;
+  }
 }
 
 @media (max-width: 768px) {
-  div {
-    grid-template-columns: 1fr;
+  main {
+      padding: 20px;
+  }
+
+  button {
+      width: 100%;
+      padding: 15px;
+  }
+
+  h1, h2 {
+      font-size: 1.75rem;
+  }
+
+  h3 {
+      font-size: 1.25rem;
   }
 }
