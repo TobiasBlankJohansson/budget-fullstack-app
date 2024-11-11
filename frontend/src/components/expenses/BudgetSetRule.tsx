@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { budgetRule } from "./Budget";
 
 type inputBudgetSetRule = {
@@ -17,8 +18,8 @@ export function BudgetSetRule({ setCardItems }: inputBudgetSetRule) {
     const saves: number = 1 - needs - wants;
 
     if (saves < 0.0) {
+      toast.error("Needs and wants can't be over 100");
       return;
-      //todo:give user response
     }
     event.currentTarget.reset();
     setCardItems(() => ({ needs: needs, wants: wants, saves: saves }));
