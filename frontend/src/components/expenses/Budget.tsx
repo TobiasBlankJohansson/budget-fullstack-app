@@ -94,6 +94,6 @@ export function Budget({
         budgetId={budgetId}
       />
       <BudgetSetRule setCardItems={setBudgetRule} />
-    </div>
+    </section>
   );
 }
