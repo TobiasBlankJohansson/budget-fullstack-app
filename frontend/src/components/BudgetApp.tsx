@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Budget } from "./expenses";
-import { budgetItem } from "./Item";
 import { DisplayIncome } from "./income/DisplayIncome";
 import { Income } from "./income/Income";
 import { getIncome } from "../api/income";
 import { getExpense } from "../api/expense";
 import { addBudget } from "../api/budget";
+import { budgetItem } from "../types/budget";
 
 export function BudgetApp() {
   const [budgetId, setBudgetId] = useState<number>(2024);
