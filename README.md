@@ -1,19 +1,19 @@
-##MyBudget
+## MyBudget
 
 #Core ide
-Make it easy to track your budget on what you spend on your needs, whants and what you save. It lets you deside on a rule on your budget in procent for exampel if you need to spend 50 % of your budget on needs and you deside that you will put aside 30 % to your whants it will calculate how mutch you can spend on each base on the present.
+It makes it easy to track your budget, including what you spend on your needs, wants, and savings. It lets you decide on a rule for your budget in percent. For example, if you need to spend 50 % of your budget on needs and you decide to put aside 30 % for your wants, it will calculate how much you can spend on each based on the present.
 
-#Featchers
+# Featchers
     • Input income
     • Display income
-    • Change budget rule
+    • Changethe  budget rule
     • Calculate how much can be spent
-    • Input expens
-    • Display expens
+    • Input expenses
+    • Display expenses
 
-#How to build and run
+# How to build and run
     1. Clone project
-    2. In root of project, open ”docker-compose.yml” and change username, password and db to what you prefer.
-    3. In the commandline in root of project ”docker compose up”.
-    4. In backend/src/main/resources/, create ”application-dev.yml”. Add URL_DB, USERNAME_DB and PASSWORD_DB with it corospending from ”docker-compose.yml”.
-    5. In frontend/, create ”.env.local”. Add ”VITE_BUDGET_PATH” with the url for the backend (backend runs on port 3000). 
+    2. In the root of the project, open ”docker-compose.yml” and change username, password, and db to what you prefer.
+    3. In the command line at the root of the project ”docker compose up”.
+    4. In backend/src/main/resources/, create ”application-dev.yml”. Add URL_DB, USERNAME_DB, and PASSWORD_DB with it corresponding from ”docker-compose.yml”.
+    5. In frontend/, create ”.env.local”. Add ”VITE_BUDGET_PATH” with the URL for the backend (the backend runs on port 3000). 
